@@ -1,5 +1,5 @@
 <?php
-include '../config/config.php';
+require_once '../config/config.php';
 
 class Database{
     //Definindo propriedades privadas com valores do BD capturados de config.php
@@ -18,7 +18,7 @@ class Database{
 
         //Data Source Name, nome que será fornecido no PDO
         $dsn = "mysql:host={$this->host};dbname={$this->dbname};port={$this->dbport}";
-        echo $dsn;
+        var_dump($dsn);
     }   
 }
 
