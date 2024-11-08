@@ -1,13 +1,14 @@
 <?php
-require_once '../config/config.php';
+//
+use Rodrigo\MvcPhpPuro\Config\Config;
 
 class Database{
     //Definindo propriedades privadas com valores do BD capturados de config.php
-    private $host = DB_HOST;
-    private $user = DB_USER;
-    private $passwd = DB_PASS;
-    private $dbname = DB_NAME;
-    private $dbport = DB_PORT;
+    private $host = Config::DB_HOST;
+    private $user = Config::DB_USER;
+    private $passwd = Config::DB_PASS;
+    private $dbname = Config::DB_NAME;
+    private $dbport = Config::DB_PORT;
 
     private $dbh; //Manipulador do BD
     private $stmt; //Script SQL
@@ -19,8 +20,7 @@ class Database{
         //Data Source Name, nome que será fornecido no PDO
         $dsn = "mysql:host={$this->host};dbname={$this->dbname};port={$this->dbport}";
         var_dump($dsn);
-    }   
+    }
 }
 
 $db = new Database();
-
