@@ -8,4 +8,18 @@ use Rodrigo\MvcPhpPuro\models\Database;
 
 $db = new Database();
 
-$db->query('SELECT * FROM book');
+//Exibe quantidade de registros
+// $db->query("SELECT * FROM book");
+// echo $db->execute();
+
+
+$isbn = '0111';
+$title = 'Novo Título';
+$author = 'Novo Autor';
+$date_added = date("dmY");
+
+
+// Modelo de inserção no BD
+// $db->query("INSERT INTO `book` (`isbn`, `title`, `author`, `date_added`)
+// VALUES ('$isbn', '$title', '$author', '$date_added')");
+// echo $db->execute();

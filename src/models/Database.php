@@ -42,11 +42,11 @@ class Database{
         //Tenta fazer uma conexão ao BD pelo PDO
         try{
             $this->dbh = new PDO($dsn, $this-> user, $this-> passwd, $options);
-            echo "Conexão com PDO ao {$this-> dbname}";
+            // echo "Conexão com PDO ao {$this-> dbname}";
         } catch(PDOException $e){
             //Caso ocorra um erro o exibe...
             $this-> error = $e-> getMessage();
-            echo ($this-> error);
+            echo $this-> error;
         }
 
     }
@@ -58,6 +58,6 @@ class Database{
     }
 
     public function execute(){
-        $this->stmt->execute();
+        return $this->stmt->execute();
     }
 }
