@@ -24,7 +24,7 @@ class Book{
         return $this->db->results();
     }
 
-    //Retornando livro pelo Id
+    //Retornando livro pelo Id...
     public function getBookById(int $id){
 
         //Cuidado com queries erradas...
@@ -36,6 +36,7 @@ class Book{
         return $this->db->result();
     }
 
+    //Deletando pelo Id...
     public function deleteById(int $id){
 
         //Cuidado com queries erradas...

@@ -65,4 +65,8 @@ echo 'Exibindo a partir do BookModel: <br> ' . PHP_EOL;
 
 var_dump($book->getBookById(3));
 
+echo '<br>Deletando a partir do Id no BookModel: <br>';
+
+$book->deleteById(1);
+
 //Uso do PDO: p rimeiro prepara (query), depois vincula (bind) por último executa
