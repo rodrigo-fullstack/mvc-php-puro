@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 //Definindo namespace para o models
-namespace Rodrigo\MvcPhpPuro\models;
+namespace Rodrigo\MvcPhpPuro\Models;
 
 //Importando classe de Configuração
 use Rodrigo\MvcPhpPuro\Config\Config;

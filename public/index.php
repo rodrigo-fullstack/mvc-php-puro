@@ -5,9 +5,10 @@ declare(strict_types=1);
 require $_SERVER['DOCUMENT_ROOT'] .'\\backend-php\\mvc-php-vanilla\\loja-livros\\vendor\\autoload.php' ;
 
 use Rodrigo\MvcPhpPuro\Config\Config;
-use Rodrigo\MvcPhpPuro\models\Database;
+use Rodrigo\MvcPhpPuro\Models\Database;
+use Rodrigo\MvcPhpPuro\Models\Book;
 
-$db = new Database();
+// $db = new Database();
 
 //Exibe quantidade de registros
 // $db->query("SELECT * FROM book");
@@ -48,12 +49,20 @@ $db = new Database();
 //     var_dump($linha); echo "<br> \n";
 // }
 
-$db->query("SELECT * FROM `book`");
+// $db->query("SELECT * FROM `book`");
 
-$db->execute();
+// $db->execute();
 
-$linhas = $db->results();
+// $linhas = $db->results();
 
-var_dump($linhas);
+// var_dump($linhas);
+
+$book = new Book();
+
+echo 'Exibindo a partir do BookModel: <br> ' . PHP_EOL;
+
+// var_dump($book->getAllBooks());
+
+var_dump($book->getBookById(3));
 
 //Uso do PDO: p rimeiro prepara (query), depois vincula (bind) por último executa
