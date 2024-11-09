@@ -63,6 +63,8 @@ class Database{
 
     //Captura todos os resultados em um array associativo
     public function results(){
+        //Fetch All retorna os resultados restantes de uma consulta
+        //Não é muito aconselhável utilizar devido a problemas de desempenho
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 //Conectando com Autoload do PHP
 require $_SERVER['DOCUMENT_ROOT'] .'\\backend-php\\mvc-php-vanilla\\loja-livros\\vendor\\autoload.php' ;
@@ -30,5 +31,29 @@ $db = new Database();
 // $db->bind(':author', $author);
 
 // echo $db->execute();
+
+
+// Pega o primeiro resultado $linha = $db->result();
+
+//Percorre as linhas da tabela e as exibe
+// for( $i = 1; $i <= 5; $i++ ){
+//     $db->query("SELECT * FROM `book` WHERE id = :id");
+
+//     //As que não possuem id retorna bool(false);
+//     $db->bind(':id', $i);
+
+//     $linha = $db->result();
+
+//     //Exibindo as linhas
+//     var_dump($linha); echo "<br> \n";
+// }
+
+$db->query("SELECT * FROM `book`");
+
+$db->execute();
+
+$linhas = $db->results();
+
+var_dump($linhas);
 
 //Uso do PDO: p rimeiro prepara (query), depois vincula (bind) por último executa
