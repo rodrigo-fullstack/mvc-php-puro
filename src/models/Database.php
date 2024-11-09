@@ -60,4 +60,21 @@ class Database{
     public function execute(){
         return $this->stmt->execute();
     }
+
+    //Captura todos os resultados em um array associativo
+    public function results(){
+        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    //Captura um único resultado no array associativo
+    public function result(){
+        //Pode ser importante para coletar pelo id
+        $this->execute();
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+
+    }
+
+    public function bind($param, $value){
+        $this->stmt->bindValue($param, $value);
+    }
 }
