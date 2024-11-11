@@ -5,8 +5,9 @@ namespace Rodrigo\MvcPhpPuro\Core;
 //Gerencia a forma com a qual o usuário utiliza a aplicação
 class Controller{
 
-    //Carregar modelo do BD
+    //Controller será executado do public
 
+    //Carregar modelo do BD
     //Realiza a conexão com o BD através da instância do modelo, no caso Book.php
     /**
      * Resumo de loadModel
@@ -15,7 +16,7 @@ class Controller{
      */
     protected function loadModel ($model){
         //Realiza a importação
-        require_once '../Models/' . $model . '.php';
+        require_once '../src/Models/' . $model . '.php';
 
         //Instancia o objeto Book
         return new $model;
@@ -35,6 +36,6 @@ class Controller{
         extract($data);
 
         //Inclui o layout básico
-        require_once '../Views/layout.php';
+        require_once '../src/Views/layout.php';
     }
 }

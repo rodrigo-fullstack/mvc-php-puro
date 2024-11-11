@@ -10,6 +10,7 @@ class Config{
     const DB_PASS = '';
     const DB_NAME = 'bookdb';
     const DB_PORT = '3306';
+    const BASE_URL = 'http://localhost/backend-php/mvc-php-vanilla/loja-livros/public/';
 }
 //Credenciais do BD
 // define('DB_HOST', 'localhost');
