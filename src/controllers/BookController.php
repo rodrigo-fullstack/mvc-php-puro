@@ -50,7 +50,17 @@ class BookController extends Controller{
         header("Location: " . Config::BASE_URL . 'Books');
     }
 
-    public function updateBook(int $id){
+
+    public function bookById(int $id){
+        $bookModel = $this->loadModel('Book');
+
+        $book = $bookModel->getBookById($id);
+
+        $this->renderView('Book/Book', ['book' => $book], $book['title']);
+    }
+
+    //Alterar livro
+    public function update(int $id){
         //Carrega o modelo do Livro
         $bookModel = $this->loadModel("Book");
 

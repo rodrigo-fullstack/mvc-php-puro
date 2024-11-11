@@ -16,7 +16,7 @@
 
     <main class="main-content">
         <div class="container">
-            <h1 class="book-id-title">Livro </h1>
+            <h1 class="book-id-title"><?= $book['title'] ?> </h1>
 
             <ul>
                 <li>ID: <?= $book['id'] ?></li>
