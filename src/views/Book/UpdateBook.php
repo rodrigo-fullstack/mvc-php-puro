@@ -18,7 +18,7 @@
 
             <h2>ID: <?= $book['id'] ?></h2>
 
-            <form class="form-book" method="post">
+            <form class="form-book" method="POST">
                 <fieldset class="input-row">
                     <label for="isbn" class="caption">ISBN Num: </label>
                     <input type="text" name="isbn" id="isbn" placeholder="<?= $book['isbn'] ?>">
