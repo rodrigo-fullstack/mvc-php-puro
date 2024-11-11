@@ -39,7 +39,8 @@ class App{
             // Determina o método da rota no mesmo sentido do de cima, acessando o método de acordo com a rota
             $this->method = Routes::ROUTES[$route]['method'];
 
-            //Divide os parâmetros da url
+
+            //Divide os parâmetros da url, fica com o restante da url, ou seja, seus parâmetros
             $this->params = array_slice($urlParts, 2);
         }
         //Se não fazer parte das rotas
@@ -50,7 +51,7 @@ class App{
         }
 
         //Importa o arquivo da controladora de acordo com o nome da controladora, nesse caso será BookController.php
-        require_once '../src/Controllers/' . $this->controller .  '.php';
+        require_once $_SERVER['DOCUMENT_ROOT'] . '/loja-livros/src/Controllers/' . $this->controller . '.php';
 
         // Inicia a controladora importada
         $this->controller = new $this->controller;

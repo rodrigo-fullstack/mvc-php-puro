@@ -5,8 +5,11 @@ declare(strict_types=1);
 require $_SERVER['DOCUMENT_ROOT'] .'\\backend-php\\mvc-php-vanilla\\loja-livros\\vendor\\autoload.php' ;
 
 use Rodrigo\MvcPhpPuro\Config\Config;
-use Rodrigo\MvcPhpPuro\Models\Database;
-use Rodrigo\MvcPhpPuro\Models\Book;
+use Rodrigo\MvcPhpPuro\Core\Database;
+use Rodrigo\MvcPhpPuro\Core\Controller;
+use Rodrigo\MvcPhpPuro\Core\App;
+
+$app = new App();
 
 // $db = new Database();
 
@@ -57,9 +60,11 @@ use Rodrigo\MvcPhpPuro\Models\Book;
 
 // var_dump($linhas);
 
-$book = new Book();
 
-echo 'Exibindo a partir do BookModel: <br> ' . PHP_EOL;
+
+// $book = new Book();
+
+// echo 'Exibindo a partir do BookModel: <br> ' . PHP_EOL;
 
 // var_dump($book->getAllBooks());
 

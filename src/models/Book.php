@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 namespace Rodrigo\MvcPhpPuro\Models;
+use Rodrigo\MvcPhpPuro\Core\Database;
+
 
 class Book{
     //Armazena a conexão com o BD
