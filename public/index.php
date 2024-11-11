@@ -63,10 +63,16 @@ echo 'Exibindo a partir do BookModel: <br> ' . PHP_EOL;
 
 // var_dump($book->getAllBooks());
 
-var_dump($book->getBookById(3));
+// var_dump($book->getBookById(3));
 
-echo '<br>Deletando a partir do Id no BookModel: <br>';
+// echo '<br>Deletando a partir do Id no BookModel: <br>';
 
-$book->deleteById(1);
+// $book->deleteById(1);
+
+// $book->update(3, "0777", "MUNDO FANTÁSTICO", "hog-wizard");
+
+// $book->addBook('0999', "Meu Amigãozão", "Joaquina Francisca");
+
+
 
 //Uso do PDO: p rimeiro prepara (query), depois vincula (bind) por último executa

@@ -36,6 +36,30 @@ class Book{
         return $this->db->result();
     }
 
+    public function addBook($isbn, $title, $author){
+        $this->db->query("INSERT INTO book(isbn, title, author)
+        VALUES (:isbn, :title, :author)");
+
+        $this->db->bind(':isbn', $isbn);
+        $this->db->bind(':title', $title);
+        $this->db->bind(':author', $author);
+
+        $this->db->execute();
+    }
+
+    //Como coleta os parâmetros de uma função como array?
+    public function update(int $id, string $isbn, string $title, string $author){
+        $this->db->query("UPDATE book SET isbn = :isbn, title = :title, author = :author WHERE id = :id");
+
+        $this->db->bind(':id', $id);
+        $this->db->bind(':isbn', $isbn);
+        $this->db->bind(':title', $title);
+        $this->db->bind(':author', $author);
+
+        $this->db->execute();
+    }
+
+
     //Deletando pelo Id...
     public function deleteById(int $id){
 
