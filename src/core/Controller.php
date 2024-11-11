@@ -16,10 +16,12 @@ class Controller{
      */
     protected function loadModel ($model){
         //Realiza a importação
-        require_once '../src/Models/' . $model . '.php';
+        require_once __DIR__ . '/../Models/' . $model . '.php';
 
+        // Corrigindo problemas de instanciação
+        $namespaceModel = "Rodrigo\\MvcPhpPuro\\Models\\{$model}";
         //Instancia o objeto Book
-        return new $model;
+        return new $namespaceModel;
     }
 
     //Renderiza a parte visual (view)

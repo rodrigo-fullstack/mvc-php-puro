@@ -51,10 +51,18 @@ class App{
         }
 
         //Importa o arquivo da controladora de acordo com o nome da controladora, nesse caso será BookController.php
-        require_once $_SERVER['DOCUMENT_ROOT'] . '/loja-livros/src/Controllers/' . $this->controller . '.php';
+        // $caminhoController = $_SERVER['DOCUMENT_ROOT'] . '/loja-livros/src/Controllers/' . $this->controller . '.php';
+
+        // Acessa o diretório atual, volta um diretório e acessa o controller
+        $caminhoController = __DIR__ . '/../Controllers/' . $this->controller . '.php';
+
+        // Para resolver problema de instanciação de classes
+        $namespaceController = "Rodrigo\\MvcPhpPuro\\Controllers\\{$this->controller}";
+
+        require_once $caminhoController;
 
         // Inicia a controladora importada
-        $this->controller = new $this->controller;
+        $this->controller = new $namespaceController;
 
         // Chamada dos métodos da Controladora BookController
         call_user_func_array([$this->controller, $this->method], $this->params);
