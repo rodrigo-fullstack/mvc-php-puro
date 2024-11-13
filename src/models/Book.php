@@ -27,7 +27,8 @@ class Book{
     }
 
     //Retornando livro pelo Id...
-    public function getBookById(int $id){
+    //Por algum motivo o ID está sendo enviado como string
+    public function getBookById($id){
 
         //Cuidado com queries erradas...
         $this->db->query( "SELECT * FROM book WHERE id = :id" );
@@ -50,7 +51,7 @@ class Book{
     }
 
     //Como coleta os parâmetros de uma função como array?
-    public function update(int $id, string $isbn, string $title, string $author){
+    public function update($id, string $isbn, string $title, string $author){
         $this->db->query("UPDATE book SET isbn = :isbn, title = :title, author = :author WHERE id = :id");
 
         $this->db->bind(':id', $id);

@@ -57,6 +57,8 @@ use Rodrigo\MvcPhpPuro\Config\Config;
                 </tr>
                 <?php endforeach; ?>
             </table>
+
+            <a href="<?= Config::BASE_URL?>book/add">Cadastrar novo livro</a>
         </div>
     </main>
 </body>

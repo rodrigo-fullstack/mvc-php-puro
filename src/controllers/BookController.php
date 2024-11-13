@@ -51,7 +51,7 @@ class BookController extends Controller{
 
         $bookModel->deleteById($id);
 
-        header("Location: " . Config::BASE_URL . 'Book/books');
+        header("Location: " . Config::BASE_URL . 'books');
     }
 
 
@@ -64,7 +64,8 @@ class BookController extends Controller{
     }
 
     //Alterar livro
-    public function update(int $id){
+    //Por algum motivo id está sendo enviado como string
+    public function update($id){
         //Carrega o modelo do Livro
         $bookModel = $this->loadModel("Book");
 
@@ -72,7 +73,7 @@ class BookController extends Controller{
 
             //Altera os dados do livro
             $bookModel->update(
-                $_POST['id'],
+                $id,
                 $_POST['isbn'],
                 $_POST['title'],
                 $_POST['author']
