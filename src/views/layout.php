@@ -9,7 +9,7 @@
 
 <body>
 
-    <?php require_once '../src/Views/' . $viewPath . '.php';?>
+    <?php require_once "../src/Views/" . $viewPath . ".php";?>
 </body>
 
 </html>

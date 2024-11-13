@@ -7,8 +7,12 @@ use Rodrigo\MvcPhpPuro\Config\Config;
 
 //Controlador específico dos livros
 class BookController extends Controller{
-    //Exibe todos os livros
     public function index(){
+        $this->renderView('index');
+    }
+
+    //Exibe todos os livros
+    public function allBooks(){
         //Carrega o modelo com o método da classe herdada
         $bookModel = $this->loadModel("Book");
 
@@ -35,7 +39,7 @@ class BookController extends Controller{
             );
 
             //Redireciona para a página de Todos os Livros
-            header('Location: ' . Config::BASE_URL . 'Books');
+            header('Location: ' . Config::BASE_URL . 'books');
         }
         //Se não receber é para exibir a view
         $this->renderView('Book/AddBook');
@@ -47,7 +51,7 @@ class BookController extends Controller{
 
         $bookModel->deleteById($id);
 
-        header("Location: " . Config::BASE_URL . 'Books');
+        header("Location: " . Config::BASE_URL . 'Book/books');
     }
 
 
@@ -75,7 +79,7 @@ class BookController extends Controller{
             );
 
             // Redireciona a página para Todos os Livros
-            header("Location: " . Config::BASE_URL . "Books");
+            header("Location: " . Config::BASE_URL . "books");
         }
         // Retorna livro com o ID
         $book = $bookModel->getBookById($id);

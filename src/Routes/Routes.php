@@ -8,7 +8,7 @@ class Routes{
         '' => ['controller' => 'BookController', 'method' => 'index'],
 
         //Também verifica todos os livros
-        'books' => ['controller' => 'BookController', 'method' => 'index'],
+        'books' => ['controller' => 'BookController', 'method' => 'allBooks'],
 
         //Acessa um livro pelo ID
         'book/id' => ['controller' => 'BookController', 'method' => 'bookById'],

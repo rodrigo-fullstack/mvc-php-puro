@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 //Conectando com Autoload do PHP
-require $_SERVER['DOCUMENT_ROOT'] .'\\backend-php\\mvc-php-vanilla\\loja-livros\\vendor\\autoload.php' ;
+require_once __DIR__ . '/../vendor/autoload.php' ;
 
 use Rodrigo\MvcPhpPuro\Config\Config;
 use Rodrigo\MvcPhpPuro\Core\Database;
